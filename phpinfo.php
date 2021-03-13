@@ -1,1 +1,1 @@
-/var/www/html/workspace/phpinfo.php
+<?php phpinfo(); ?>

@@ -1,1 +1,2 @@
-/var/www/html/workspace/test_action.php
+こんにちは、<?php echo htmlspecialchars($_POST['name']); ?>さん。
+あなたは<?php echo (int)$_POST['age']; ?>歳です。
