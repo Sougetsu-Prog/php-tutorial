@@ -48,6 +48,16 @@
     # br();
     $num_for_if = 10;
     echo "Now my number is $num_for_if";
+    br();
+    # include前は当然別ファイルの変数名を参照できない
+    echo "She is $firstname $lastname";
+    br();
+    # includeの後は""でも''でもok
+    include 'include_and_variable.php';
+    # 変数を表示するときは""で囲む ''は変数名がそのまま表示されてしまう
+    echo "She is $firstname $lastname";
+    br();
+    echo 'She is $firstname $lastname';
     ?>
     </body>
 </html>
