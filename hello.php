@@ -58,6 +58,15 @@
     echo "She is $firstname $lastname";
     br();
     echo 'She is $firstname $lastname';
+    br();
+    $int_var = 12345;
+    echo $int_var;
+    br();
+    $million = 1000000;
+    $large_number = 50000000000000 * $million;
+    var_dump($large_number);
+    br();
+    var_dump(round(25/7));
     ?>
     </body>
 </html>
