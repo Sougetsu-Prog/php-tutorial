@@ -59,14 +59,109 @@
     br();
     echo 'She is $firstname $lastname';
     br();
+    # integerは小数点の無い整数 正と負の整数に対応
     $int_var = 12345;
     echo $int_var;
+    br();
+    $another_int = -12346 + $int_var;
+    echo $another_int;
     br();
     $million = 1000000;
     $large_number = 50000000000000 * $million;
     var_dump($large_number);
     br();
     var_dump(round(25/7));
+    br();
+    $many = 2.2888800;
+    $many_2 = 2.2111200;
+    $few = $many + $many_2;
+    # 必要最低限の桁数がプリントされる
+    print("$many + $many_2 = $few <br>");
+    br();
+    if (true) {
+        print("この場所はいつもprintされます。<br>");
+    } else {
+        print("この場所がprintされることはありません。<br>");
+    }
+    if (0) {
+        print("この場所はprintされますか?<br>");
+    } else {
+        print("if(0)の処理文はprintされなかったようです<br>");
+    }
+    if ("") {
+        print("この場所はprintされますか?<br>");
+    } else {
+        # 意味のある記号は""内では\でエスケープする
+        print("if(\"\")の処理文はprintされなかったようです<br>");
+    }
+    $false_array = array();
+    if ($false_array) {
+        print("この場所はprintされますか?<br>");
+    } else {
+        print("if(\$false_array)の処理文はprintされなかったようです<br>");
+    }
+    $false_array2 = [];
+    if ($false_array2) {
+        print("この場所はprintされますか?<br>");
+    } else {
+        print("if(\$false_array2)の処理文はprintされなかったようです<br>");
+    }
+    if (empty($false_array2)) {
+        echo "emptyは変数が空かどうか検査します。<br>
+        変数が空であるとみなされるのは、変数が存在しない場合や 変数の値が false に等しい場合です。<br>
+        \$false_array2の配列内は空です。<br>";
+    }
+    $var_zero = 0;
+    if (empty($var_zero)) {
+        // $var_zeroが0なのでtrueと評価される
+        echo '$var_zero は0か空か値が代入されていません。<br>';
+    }
+    if (isset($var_zero)) {
+        echo '$var_zeroは0ですが変数がセットされているので<br>
+        trueと評価されます。<br>';
+    }
+    $var_null = null;
+    if (isset($var_null)) {
+        echo 'この場所は表示されるでしょうか？<br>';
+    } else {
+        echo '$var_nullはnullなのでIsSet()関数で<br>
+        テストするとfalseを返します。<br>';
+    }
+    $string_zero = "";
+    if ($string_zero) {
+        echo '';
+    } else {
+        echo '文字列の長さが0なのでif文ではfalseです。<br>
+        isset()関数では変数がセットされているので<br>
+        trueとなります。<br>';
+    }
+    $var_name = "name";
+    $literally = '私の$var_nameは展開されません!<br>';
+    print ($literally);
+    $channel =<<<_XML_
+    <channel>
+      <title>What's For Dinner</title>
+      <link>test.com</link>
+      <description>Choose what to eat tonight.</description>
+    </channel>
+    _XML_;
+    br();
+    echo <<<END
+    この場所も<br>
+    ここも
+    もちろんここも
+    変数も使えます
+    例えば\$var_name の値は{$var_name}です。
+    ここまで
+    END;
+    print $channel;
+    br();
+    # PSR-2によれば同一ファイル内でシンボル(クラス・関数・定数)の宣言を
+    # すべきでないとのことなので、test_define.phpに記述
+    # define("ONE", "first thing");
+    include 'test_define.php';
+    echo ONE;
+    echo ONE;
     ?>
     </body>
 </html>
