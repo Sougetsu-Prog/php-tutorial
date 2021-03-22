@@ -161,7 +161,67 @@
     # define("ONE", "first thing");
     include 'test_define.php';
     echo ONE;
-    echo ONE;
+    br();
+    echo ONE; // Is it valid?とは表示されない
+    br();
+    echo TWO;
+    br();
+    print (var_dump(ONE, TWO)); // TWOは単なるTWOという文字列
+                                // として扱われている
+    br();
+    echo _THREE_;
+    br();
+    echo __LINE__;
+    br();
+    echo __FILE__;
+    br();
+    echo __CLASS__;
+    br();
+    echo __FUNCTION__;
+    br();
+    echo __DIR__;
+    br();
+    
+    $d = date("D");
+    /*
+    if ($d == "Fri") {
+        echo "Have a nice weekend<br>";
+    } else {
+        echo "Have a nice day!<br>";
+    }
+    */
+    switch ($d) {
+        case "Mon":
+            echo "Today is Monday<br>";
+            break;
+        
+        case "Tue":
+            echo "Today is Tuesday<br>";
+            break;
+        
+        case "Wed":
+            echo "Today is Wednesday<br>";
+            break;
+        
+        case "Thu":
+            echo "Today is Thursday<br>";
+            break;
+        
+        case "Fri":
+            echo "Today is Friday<br>";
+            break;
+        
+        case "Sat":
+            echo "Today is Saturday<br>";
+            break;
+        
+        case "Sun":
+            echo "Today is Sunday<br>";
+            break;
+        
+        default:
+            echo "Which day is this?<br>";
+    }
     ?>
     </body>
 </html>
